@@ -43,7 +43,7 @@
 
             services.AddTransient<SeedDb>();
             services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IRepository, Repository>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<IUserHelper, UserHelper>();
 
             services.Configure<CookiePolicyOptions>(options =>
