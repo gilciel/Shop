@@ -4,6 +4,7 @@ namespace Shop.Web.Controllers.API
 {
     using Data;
     using Microsoft.AspNetCore.Mvc;
+    using System.Linq;
 
     [Route("api/[Controller]")]
     public class ProductsController : Controller
@@ -20,5 +21,12 @@ namespace Shop.Web.Controllers.API
         {
             return this.Ok(this.productRepository.GetAll());
         }
+
+
+        public IQueryable GetAllWithUsers()
+        {
+            return this.context.Products.Include(p => p.User).OrderBy(p => p.Name);
+        }
+
     }
 }
