@@ -16,7 +16,7 @@
         }
         public IQueryable GetAllWithUsers()
         {
-            return this.context.Products.Include(p => p.User).OrderBy(p => p.Name);
+            return this.context.Products.Include(p => p.User);
         }
 
     }

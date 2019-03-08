@@ -9,6 +9,7 @@
     using Microsoft.EntityFrameworkCore;
     using System.IO;
     using System;
+    using System.Linq;
 
     public class ProductsController : Controller
     {
@@ -25,7 +26,7 @@
         // GET: Products
         public IActionResult Index()
         {
-            return View(this.productRepository.GetAll());
+            return View(this.productRepository.GetAll().OrderBy(p => p.Name));
         }
 
         // GET: Products/Details/5
@@ -146,7 +147,10 @@
 
                     if (view.ImageFile != null && view.ImageFile.Length > 0)
                     {
-                        path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\Products", view.ImageFile.FileName);
+                        path = Path.Combine(
+                            Directory.GetCurrentDirectory(),
+                            "wwwroot\\images\\Products",
+                            view.ImageFile.FileName);
 
                         using (var stream = new FileStream(path, FileMode.Create))
                         {

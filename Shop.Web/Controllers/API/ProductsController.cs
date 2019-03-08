@@ -19,13 +19,7 @@ namespace Shop.Web.Controllers.API
         [HttpGet]
         public IActionResult GetProducts()
         {
-            return this.Ok(this.productRepository.GetAll());
-        }
-
-
-        public IQueryable GetAllWithUsers()
-        {
-            return this.context.Products.Include(p => p.User).OrderBy(p => p.Name);
+            return this.Ok(this.productRepository.GetAllWithUsers());
         }
 
     }
