@@ -35,13 +35,13 @@
         {
             if (id == null)
             {
-                return NotFound();
+                return new NotFoundViewResult("ProductNotFound");
             }
 
             var product = await this.productRepository.GetByIdAsync(id.Value);
             if (product == null)
             {
-                return NotFound();
+                return new NotFoundViewResult("ProductNotFound");
             }
 
             return View(product);
@@ -220,5 +220,10 @@
             await this.productRepository.DeleteAsync(product);
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult ProductNotFound()
+        {
+            return this.View();
+        }
+
     }
 }
