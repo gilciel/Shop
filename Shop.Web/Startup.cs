@@ -1,8 +1,8 @@
 ﻿namespace Shop.Web
 {
-    using System.Text;
     using Data;
     using Data.Entities;
+    using Data.Repositories;
     using Helpers;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -13,6 +13,7 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.IdentityModel.Tokens;
+    using System.Text;
 
     public class Startup
     {
@@ -44,9 +45,9 @@
                 {
                     cfg.TokenValidationParameters = new TokenValidationParameters
                     {
-                    ValidIssuer = this.Configuration["Tokens:Issuer"],
-                    ValidAudience = this.Configuration["Tokens:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.Configuration["Tokens:Key"]))
+                        ValidIssuer = this.Configuration["Tokens:Issuer"],
+                        ValidAudience = this.Configuration["Tokens:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.Configuration["Tokens:Key"]))
                     };
                 });
 
@@ -58,6 +59,7 @@
             services.AddTransient<SeedDb>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IUserHelper, UserHelper>();
 
             services.Configure<CookiePolicyOptions>(options =>
