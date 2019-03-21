@@ -1,6 +1,7 @@
 ﻿namespace Shop.Web.Data
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
     using Entities;
@@ -26,6 +27,32 @@
 
             await this.userHelper.CheckRoleAsync("Admin");
             await this.userHelper.CheckRoleAsync("Customer");
+            if (!this.context.Countries.Any())
+            {
+                var cities = new List<City>();
+                cities.Add(new City { Name = "Medellín" });
+                cities.Add(new City { Name = "Bogotá" });
+                cities.Add(new City { Name = "Calí" });
+                
+                this.context.Countries.Add(new Country
+                {
+                    Cities = cities,
+                    Name = "Colombia"
+                });
+                var citiesb = new List<City>();
+                citiesb.Add(new City { Name = "Belo Horizonte" });
+                citiesb.Add(new City { Name = "Sao Paulo" });
+                citiesb.Add(new City { Name = "Rio de Janeiro" });
+
+                this.context.Countries.Add(new Country
+                {
+                    Cities = citiesb,
+                    Name = "Brasil"
+                });
+
+                await this.context.SaveChangesAsync();
+            }
+
 
             // Add user
             var user = await this.userHelper.GetUserByEmailAsync("gilcielphp@gmail.com");
@@ -36,7 +63,10 @@
                     FirstName = "Gilciel",
                     LastName = "Almeida",
                     Email = "gilcielphp@gmail.com",
-                    UserName = "gilcielphp@gmail.com"
+                    UserName = "gilcielphp@gmail.com",
+                    Address = "Rua Rio Negro",
+                    CityId = this.context.Countries.FirstOrDefault().Cities.FirstOrDefault().Id,
+                    City = this.context.Countries.FirstOrDefault().Cities.FirstOrDefault()
                 };
 
                 var result = await this.userHelper.AddUserAsync(user, "123456");
