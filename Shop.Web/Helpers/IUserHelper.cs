@@ -8,7 +8,6 @@
     public interface IUserHelper
     {
         Task<User> GetUserByEmailAsync(string email);
-
         Task<IdentityResult> AddUserAsync(User user, string password);
         Task<SignInResult> LoginAsync(LoginViewModel model);
         Task LogoutAsync();
@@ -18,8 +17,8 @@
         Task CheckRoleAsync(string roleName);
         Task AddUserToRoleAsync(User user, string roleName);
         Task<bool> IsUserInRoleAsync(User user, string roleName);
-
-
-
+        Task<string> GenerateEmailConfirmationTokenAsync(User user);
+        Task<IdentityResult> ConfirmEmailAsync(User user, string token);
+        Task<User> GetUserByIdAsync(string userId);
     }
 }

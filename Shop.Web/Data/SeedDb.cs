@@ -75,6 +75,9 @@
                     throw new InvalidOperationException("Could not create the user in seeder");
                 }
                 await this.userHelper.AddUserToRoleAsync(user, "Admin");
+                var token = await this.userHelper.GenerateEmailConfirmationTokenAsync(user);
+                await this.userHelper.ConfirmEmailAsync(user, token);
+
             }
             var isInRole = await this.userHelper.IsUserInRoleAsync(user, "Admin");
             if (!isInRole)
