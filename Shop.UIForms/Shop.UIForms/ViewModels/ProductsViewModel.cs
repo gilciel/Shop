@@ -26,7 +26,6 @@
             set { this.SetValue(ref this.isRefreshing, value); }
         }
 
-
         public ProductsViewModel()
         {
             this.apiService = new ApiService();
@@ -36,11 +35,19 @@
         private async void LoadProduts()
         {
             this.IsRefreshing = true;
+            var url = Application.Current.Resources["UrlAPI"].ToString();
             var response = await this.apiService.GetListAsync<Product>(
-                "https://shopgdda.azurewebsites.net",
+                url,
                 "/api",
-                "/Products"
-                );
+                "/Products",
+                "bearer",
+                MainViewModel.GetInstance().Token.Token);
+
+            //var response = await this.apiService.GetListAsync<Product>(
+            //    "https://shopgdda.azurewebsites.net",
+            //    "/api",
+            //    "/Products"
+            //    );
             this.IsRefreshing = false;
 
             if (!response.IsSuccess)
