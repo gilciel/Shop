@@ -20,6 +20,7 @@ namespace Shop.UIForms.Views
         {
             base.OnAppearing();
             App.Navigator = this.Navigator;
+            App.Master = this;
         }
 
     }
