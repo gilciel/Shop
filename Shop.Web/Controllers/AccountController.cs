@@ -15,6 +15,8 @@
     using Microsoft.IdentityModel.Tokens;
     using Shop.Web.Data;
     using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Authentication.JwtBearer;
+    using Shop.Common.Models;
 
     public class AccountController : Controller
     {

@@ -69,8 +69,8 @@
                 IsAvailabe = true,
                 Name = this.Name,
                 Price = (long)price,
-                User = new User { UserName = MainViewModel.GetInstance().UserEmail }
-            };
+                User = new User { Email = MainViewModel.GetInstance().UserEmail }
+        };
 
             var url = Application.Current.Resources["UrlAPI"].ToString();
             var response = await this.apiService.PostAsync(
