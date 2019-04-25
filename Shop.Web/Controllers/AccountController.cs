@@ -1,22 +1,19 @@
 ﻿namespace Shop.Web.Controllers
 {
+    using Helpers;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.IdentityModel.Tokens;
+    using Models;
+    using Shop.Web.Data;
     using System;
     using System.IdentityModel.Tokens.Jwt;
     using System.Linq;
     using System.Security.Claims;
     using System.Text;
     using System.Threading.Tasks;
-    using Data.Entities;
-    using Helpers;
-    using Models;
-    using Microsoft.AspNetCore.Identity;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.IdentityModel.Tokens;
-    using Shop.Web.Data;
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Authentication.JwtBearer;
-    using Shop.Common.Models;
 
     public class AccountController : Controller
     {
@@ -88,7 +85,7 @@
                 {
                     var city = await this.countryRepository.GetCityAsync(model.CityId);
 
-                    user = new User
+                    user = new Data.Entities.User
                     {
                         FirstName = model.FirstName,
                         LastName = model.LastName,
@@ -354,7 +351,7 @@
             this.ViewBag.Message = "User not found.";
             return View(model);
         }
-        [Authorize(Roles="Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var users = await this.userHelper.GetAllUsersAsync();
