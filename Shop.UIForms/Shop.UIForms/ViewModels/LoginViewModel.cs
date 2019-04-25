@@ -5,6 +5,7 @@
     using Shop.Common.Helpers;
     using Shop.Common.Models;
     using Shop.Common.Services;
+    using Shop.UIForms.Helpers;
     using Shop.UIForms.Views;
     using System.Windows.Input;
     using Xamarin.Forms;
@@ -47,10 +48,14 @@
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must enter an email.",
-                    "Accept"
-                    );
+                    Languages.Error,
+                    Languages.EmailMessage,
+                    Languages.Accept);
+                //await Application.Current.MainPage.DisplayAlert(
+                //    "Error",
+                //    "You must enter an email.",
+                //    "Accept"
+                //    );
                 return;
             }
             if (string.IsNullOrEmpty(this.Password))
