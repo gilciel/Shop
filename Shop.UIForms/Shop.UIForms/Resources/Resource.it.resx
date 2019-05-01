@@ -162,4 +162,31 @@
   <data name="TitleLogin" xml:space="preserve">
     <value>Chiudi sessione</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Conferma</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>Inserisci la tua email</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Inserisci la password</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>Ricordati di me in questo dispositivo!</value>
+  </data>
 </root>

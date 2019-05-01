@@ -3,6 +3,7 @@
     using Common.Models;
     using Common.Services;
     using GalaSoft.MvvmLight.Command;
+    using Shop.UIForms.Helpers;
     using System.Windows.Input;
     using Xamarin.Forms;
 
@@ -41,13 +42,13 @@
         {
             if (string.IsNullOrEmpty(this.Product.Name))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "You must enter a product name.", "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, Languages.NameProductError, Languages.Accept);
                 return;
             }
 
             if (this.Product.Price <= 0)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "The price must be a number greather than zero.", "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, Languages.PriceError, Languages.Accept);
                 return;
             }
 
@@ -69,7 +70,7 @@
 
             if (!response.IsSuccess)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
             }
 
@@ -80,7 +81,7 @@
 
         private async void Delete()
         {
-            var confirm = await Application.Current.MainPage.DisplayAlert("Confirm", "Are you sure to delete the product?", "Yes", "No");
+            var confirm = await Application.Current.MainPage.DisplayAlert(Languages.Confirm, Languages.DeleteProduct, Languages.Yes, Languages.No);
             if (!confirm)
             {
                 return;
@@ -103,7 +104,7 @@
 
             if (!response.IsSuccess)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
             }
 

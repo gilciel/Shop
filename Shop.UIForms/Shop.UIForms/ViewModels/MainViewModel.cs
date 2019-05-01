@@ -2,6 +2,7 @@
 {
     using GalaSoft.MvvmLight.Command;
     using Shop.Common.Models;
+    using Shop.UIForms.Helpers;
     using Shop.UIForms.Views;
     using System;
     using System.Collections.Generic;
@@ -47,19 +48,19 @@
                 {
                     Icon = "ic_perm_device_information",
                     PageName = "AboutPage",
-                    Title = "About"
+                    Title = Languages.TitleAbout
                 },
                 new Menu
                 {
                     Icon = "ic_phonelink_setup",
                     PageName = "SetupPage",
-                    Title = "Setup"
+                    Title = Languages.TitleSetup
                 },
                 new Menu
                 {
                     Icon = "ic_exit_to_app",
                     PageName = "LoginPage",
-                    Title = "Close session"
+                    Title = Languages.TitleLogin
                 }
             };
             this.Menus = new ObservableCollection<MenuItemViewModel>(menus.Select(m => new MenuItemViewModel

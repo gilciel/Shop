@@ -2,6 +2,7 @@
 {
     using Shop.Common.Models;
     using Shop.Common.Services;
+    using Shop.UIForms.Helpers;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
@@ -57,9 +58,9 @@
             if (!response.IsSuccess)
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     response.Message,
-                    "Accept"
+                    Languages.Accept
                     );
                 return;
             }

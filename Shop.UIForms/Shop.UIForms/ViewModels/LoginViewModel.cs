@@ -61,9 +61,9 @@
             if (string.IsNullOrEmpty(this.Password))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must enter an password.",
-                    "Accept"
+                    Languages.Error,
+                    Languages.PasswordError,
+                    Languages.Accept
                     );
                 return;
             }
@@ -88,7 +88,7 @@
 
             if (!response.IsSuccess)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Email or password incorrect.", "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, Languages.EmailPasswordError, Languages.Accept);
                 return;
             }
             var token = (TokenResponse)response.Result;

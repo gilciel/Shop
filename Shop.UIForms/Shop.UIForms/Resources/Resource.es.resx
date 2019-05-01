@@ -162,4 +162,31 @@
   <data name="TitleLogin" xml:space="preserve">
     <value>Cerrar sesión</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>SÍ</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Dirección de</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>Introduzca Su Correo Electrónico</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Introduce tu Contraseña</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>Recuérdame en este dispositivo!</value>
+  </data>
 </root>

@@ -118,75 +118,75 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Accept" xml:space="preserve">
-    <value>Accept</value>
+    <value>Acceptez !</value>
   </data>
   <data name="EmailError" xml:space="preserve">
-    <value>You must enter an email.</value>
+    <value>Vous devez entrer un email.</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Erreur!</value>
   </data>
   <data name="PasswordError" xml:space="preserve">
-    <value>You must enter an password.</value>
+    <value>Vous devez entrer votre mot de passe</value>
   </data>
   <data name="EmailPasswordError" xml:space="preserve">
-    <value>Email or password incorrect.</value>
+    <value>Email ou mot de passe incorrect!</value>
   </data>
   <data name="NameProductError" xml:space="preserve">
-    <value>You must enter a product name.</value>
+    <value>Veuillez entrer un nom de produit.</value>
   </data>
   <data name="PriceProductError" xml:space="preserve">
-    <value>You must enter a product price.</value>
+    <value>Vous devez entrer un prix du produit.!</value>
   </data>
   <data name="PriceError" xml:space="preserve">
-    <value>The price must be a number greather than zero.</value>
+    <value>Le prix doit être supérieur à zéro.!</value>
   </data>
   <data name="DeleteProduct" xml:space="preserve">
-    <value>Are you sure to delete the product?</value>
+    <value>Etes-vous sûr de vouloir supprimer le</value>
   </data>
   <data name="NameAboutPage" xml:space="preserve">
-    <value>About Page</value>
+    <value>Page à propos</value>
   </data>
   <data name="NameSetupPage" xml:space="preserve">
-    <value>Setup Page</value>
+    <value>Réglage Page</value>
   </data>
   <data name="NameLoginPage" xml:space="preserve">
-    <value>Login Page</value>
+    <value>Page de connexion</value>
   </data>
   <data name="TitleAbout" xml:space="preserve">
-    <value>About</value>
+    <value>Qui sommes-nous</value>
   </data>
   <data name="TitleSetup" xml:space="preserve">
-    <value>Setup</value>
+    <value>Installation</value>
   </data>
   <data name="TitleLogin" xml:space="preserve">
-    <value>Close session</value>
+    <value>Fermer la session</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirm</value>
+    <value>Oui</value>
   </data>
   <data name="No" xml:space="preserve">
-    <value>No</value>
+    <value>Non </value>
   </data>
   <data name="Yes" xml:space="preserve">
-    <value>Yes</value>
+    <value>Oui</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Login</value>
+    <value>Connexion !</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>Email</value>
+    <value>E-mail</value>
   </data>
   <data name="EmailPlaceHolder" xml:space="preserve">
-    <value>Enter Your Email...</value>
+    <value>Saisissez votre e-mail...</value>
   </data>
   <data name="PasswordPlaceHolder" xml:space="preserve">
-    <value>Enter Your Password...</value>
-  </data>
-  <data name="Remember" xml:space="preserve">
-    <value>Remember me in this device</value>
+    <value>Accès sécurisé</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Mot de passe</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>Souviens-toi de moi dans cet appareil!</value>
   </data>
 </root>

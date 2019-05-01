@@ -3,6 +3,7 @@
     using Common.Models;
     using Common.Services;
     using GalaSoft.MvvmLight.Command;
+    using Shop.UIForms.Helpers;
     using System.Windows.Input;
     using Xamarin.Forms;
 
@@ -43,20 +44,20 @@
         {
             if (string.IsNullOrEmpty(this.Name))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "You must enter a product name.", "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, Languages.NameProductError, Languages.Accept);
                 return;
             }
 
             if (string.IsNullOrEmpty(this.Price))
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "You must enter a product price.", "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, Languages.PriceProductError, Languages.Accept);
                 return;
             }
 
             var price = decimal.Parse(this.Price);
             if (price <= 0)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "The price must be a number greather than zero.", "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, Languages.PriceError, Languages.Accept);
                 return;
             }
 
@@ -83,7 +84,7 @@
 
             if (!response.IsSuccess)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                await Application.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
             }
 
