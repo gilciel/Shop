@@ -77,7 +77,7 @@
                 Name = this.Name,
                 Price = (long)price,
                 User = new User { Email = MainViewModel.GetInstance().UserEmail }
-        };
+            };
 
             var url = Application.Current.Resources["UrlAPI"].ToString();
             var response = await this.apiService.PostAsync(
@@ -102,6 +102,7 @@
             await App.Navigator.PopAsync();
         }
         public ICommand ChangeImageCommand => new RelayCommand(this.ChangeImage);
+
         private async void ChangeImage()
         {
             await CrossMedia.Current.Initialize();
