@@ -6,6 +6,8 @@
     using Microsoft.AspNetCore.Mvc;
     using Shop.Web.Data.Entities;
     using Shop.Web.Helpers;
+    using System;
+    using System.IO;
     using System.Threading.Tasks;
 
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -40,7 +42,23 @@
                 return this.BadRequest("Invalid user");
             }
 
-            //TODO: Upload images
+
+            var imageUrl = string.Empty;
+            if (product.ImageArray != null && product.ImageArray.Length > 0)
+            {
+                var stream = new MemoryStream(product.ImageArray);
+                var guid = Guid.NewGuid().ToString();
+                var file = $"{guid}.jpg";
+                var folder = "wwwroot\\images\\Products";
+                var fullPath = $"~/images/Products/{file}";
+                var response = FilesHelper.UploadPhoto(stream, folder, file);
+
+                if (response)
+                {
+                    imageUrl = fullPath;
+                }
+            }
+
             var entityProduct = new Product
             {
                 IsAvailabe = product.IsAvailabe,
@@ -49,7 +67,8 @@
                 Name = product.Name,
                 Price = product.Price,
                 Stock = product.Stock,
-                User = user
+                User = user,
+                ImageUrl = imageUrl
             };
 
             var newProduct = await this.productRepository.CreateAsync(entityProduct);

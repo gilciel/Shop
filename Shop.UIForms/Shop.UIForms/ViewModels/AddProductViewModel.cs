@@ -5,6 +5,7 @@
     using GalaSoft.MvvmLight.Command;
     using Plugin.Media;
     using Plugin.Media.Abstractions;
+    using Shop.Common.Helpers;
     using Shop.UIForms.Helpers;
     using System.Windows.Input;
     using Xamarin.Forms;
@@ -70,13 +71,19 @@
             this.IsRunning = true;
             this.IsEnabled = false;
 
-            //TODO: Add image
+            byte[] imageArray = null;
+            if (this.file != null)
+            {
+                imageArray = FilesHelper.ReadFully(this.file.GetStream());
+            }
+
             var product = new Product
             {
                 IsAvailabe = true,
                 Name = this.Name,
                 Price = (long)price,
-                User = new User { Email = MainViewModel.GetInstance().UserEmail }
+                User = new User { Email = MainViewModel.GetInstance().UserEmail },
+                ImageArray = imageArray
             };
 
             var url = Application.Current.Resources["UrlAPI"].ToString();
