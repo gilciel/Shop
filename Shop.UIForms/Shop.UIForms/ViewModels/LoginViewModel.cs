@@ -107,5 +107,13 @@
             Application.Current.MainPage = new MasterPage();
             //await Application.Current.MainPage.Navigation.PushAsync(new ProductsPage());
         }
+        public ICommand RegisterCommand => new RelayCommand(this.Register);
+        private async void Register()
+        {
+            MainViewModel.GetInstance().Register = new RegisterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
+        }
+
+
     }
 }
