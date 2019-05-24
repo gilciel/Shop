@@ -294,7 +294,7 @@
 
                 var url = $"{servicePrefix}{controller}";
                 var response = await client.PostAsync(url, content);
-                var answer = await response.Content.ReadAsStringAsync();
+                string answer = await response.Content.ReadAsStringAsync();
                 var obj = JsonConvert.DeserializeObject<Response>(answer);
                 return obj;
             }
