@@ -30,6 +30,15 @@
                     Placeholder="{i18n:Translate PasswordPlaceHolder}"
                     Text="{Binding Password}">
                 </Entry>
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Forgot my password"
+                    TextColor="Navy">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RememberPasswordCommand }"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
                 <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                     <Label
                         Text="{i18n:Translate Remember}"
