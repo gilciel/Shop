@@ -12,6 +12,11 @@
             	HeightRequest="150"
             	Source="shop.png">
             </Image>
+            <Label
+                FontSize="Large"
+                Text="{Binding User.FullName, StringFormat='Welcome: {0}'}"
+                TextColor="White">
+            </Label>
             <ListView
                 BackgroundColor="Transparent"
             	ItemsSource="{Binding Menus}"
