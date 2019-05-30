@@ -30,8 +30,8 @@
         public RegisterViewModel Register { get; set; }
         public RememberPasswordViewModel RememberPassword { get; set; }
         public ProfileViewModel Profile { get; set; }
-
         public ICommand AddProductCommand => new RelayCommand(this.GoAddProduct);
+        public ChangePasswordViewModel ChangePassword { get; set; }
 
         private async void GoAddProduct()
         {

@@ -5,6 +5,7 @@
     using GalaSoft.MvvmLight.Command;
     using Newtonsoft.Json;
     using Shop.Common.Helpers;
+    using Shop.UIForms.Views;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
@@ -207,6 +208,13 @@
                 "Accept");
             await App.Navigator.PopAsync();
         }
+        public ICommand ModifyPasswordCommand => new RelayCommand(this.ModifyPassword);
+        private async void ModifyPassword()
+        {
+            MainViewModel.GetInstance().ChangePassword = new ChangePasswordViewModel();
+            await App.Navigator.PushAsync(new ChangePasswordPage());
+        }
+
     }
 
 }
