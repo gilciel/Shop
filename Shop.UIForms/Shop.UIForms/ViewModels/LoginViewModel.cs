@@ -41,6 +41,9 @@
             this.Email = "gilcielphp@gmail.com";
             this.Password = "123456";
             this.IsRemember = true;
+            this.Email = "";
+            this.Password = "";
+            this.IsRemember = false;
         }
 
         private async void Login()
