@@ -59,6 +59,7 @@
             }
 
             this.activityIndicatorProgressBar.Visibility = ViewStates.Visible;
+            this.loginButton.Enabled = false;
 
             var request = new TokenRequest
             {
@@ -73,6 +74,7 @@
                 request);
 
             this.activityIndicatorProgressBar.Visibility = ViewStates.Invisible;
+            this.loginButton.Enabled = true;
 
             if (!response.IsSuccess)
             {
