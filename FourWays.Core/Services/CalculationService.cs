@@ -1,6 +1,4 @@
-﻿using FourWays.Core.Services;
-
-namespace FourWays.Core
+﻿namespace FourWays.Core.Services
 {
     public class CalculationService : ICalculationService
     {
