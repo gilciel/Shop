@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{859F01FA-73FD-4FA8-BC42-CC65D73D4634}</ProjectGuid>
+    <ProjectGuid>{7FF77DE1-FBAD-4876-8682-9BD2973023C9}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
@@ -99,7 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FourWays.FormsTraditional\FourWays.FormsTraditional.csproj">
-      <Project>{DD206CA3-0BFD-45C1-99C2-63992CA1F45C}</Project>
+      <Project>{0E60EA7B-CCF3-43E5-BBD0-F2753ACE61BC}</Project>
       <Name>FourWays.FormsTraditional</Name>
     </ProjectReference>
   </ItemGroup>

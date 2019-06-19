@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{542A44CC-261A-4B8B-BB69-47C9C053C08E}</ProjectGuid>
+    <ProjectGuid>{15711EAC-D4AC-41BF-8351-6DC200914520}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -126,7 +126,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\FourWays.FormsTraditional\FourWays.FormsTraditional.csproj">
-      <Project>{DD206CA3-0BFD-45C1-99C2-63992CA1F45C}</Project>
+      <Project>{0E60EA7B-CCF3-43E5-BBD0-F2753ACE61BC}</Project>
       <Name>FourWays.FormsTraditional</Name>
     </ProjectReference>
   </ItemGroup>

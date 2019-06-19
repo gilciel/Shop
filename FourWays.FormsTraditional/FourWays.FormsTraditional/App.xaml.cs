@@ -1,16 +1,17 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿
 
 namespace FourWays.FormsTraditional
 {
+    using Views;
+    using Xamarin.Forms;
+
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            this.MainPage = new NavigationPage(new TipPage());
         }
 
         protected override void OnStart()

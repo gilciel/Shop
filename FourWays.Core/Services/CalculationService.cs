@@ -7,5 +7,5 @@
             return subTotal * (decimal)(generosity / 100);
         }
     }
-}
 
+}

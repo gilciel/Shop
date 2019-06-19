@@ -4,5 +4,5 @@
     {
         decimal TipAmount(decimal subTotal, double generosity);
     }
-}
 
+}
